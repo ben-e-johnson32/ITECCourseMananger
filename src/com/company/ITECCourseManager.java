@@ -25,7 +25,7 @@ public class ITECCourseManager {
 
         //Error!
         //System.out.println(maintenanceCourse.name);
-        //Erro!
+        //Error!
         //System.out.println(maintenanceCourse.maxStudents);
 
 
