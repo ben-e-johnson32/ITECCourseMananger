@@ -9,6 +9,7 @@ public class ITECCourse {
     private int code;
     private ArrayList<String> students;
     private int maxStudents;
+    private String room;
 
     public int getCode() {
         return code;
@@ -42,13 +43,19 @@ public class ITECCourse {
         name = newName;
     }
 
+    // Added getter and setter for the room.
+    public String getRoom() { return room; }
+
+    public void setRoom(String newRoom) { room = newRoom; }
 
 
-    public ITECCourse(String name, int courseCode, int courseMaxStudents) {
+
+    public ITECCourse(String name, int courseCode, int courseMaxStudents, String room) {
         this.name = name;
         this.code = courseCode;
         this.students = new ArrayList<String>();
         this.maxStudents = courseMaxStudents;
+        this.room = room;
     }
 
 
@@ -74,6 +81,7 @@ public class ITECCourse {
     public void writeCourseInfo() {
         System.out.println("Course Name: " + this.name);
         System.out.println("Course Code: " + this.code);
+        System.out.println("Classroom: " + this.room);
         System.out.println("Students enrolled:");
         for (String student : this.students) {
             System.out.println(student);
@@ -86,6 +94,6 @@ public class ITECCourse {
         return this.students.size();
     }
 
-
-
+    // A class method to get the number of open spots remaining in the class.
+    public int getNumberOfOpenSpots() { return this.maxStudents - this.students.size(); }
 }
